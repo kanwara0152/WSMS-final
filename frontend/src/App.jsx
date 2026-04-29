@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage';
 import ApiProductsPage from './pages/ApiProductsPage';
 import PlaygroundPage from './pages/PlaygroundPage';
 import LoginPage from './pages/LoginPage';
+import DashboardPage from './pages/DashboardPage';
 
 const headerStyle = {
   display: 'flex',
@@ -57,16 +58,19 @@ export default function App() {
   return (
     <div style={appStyle}>
       <header style={headerStyle}>
-        <div style={brandStyle}>Course Shop</div>
+        <div style={brandStyle}>LearnHub</div>
         <div style={navStyle}>
           <button style={navButtonStyle(page === 'home')} onClick={() => setPage('home')}>
             หน้าหลัก
           </button>
           <button style={navButtonStyle(page === 'products')} onClick={() => setPage('products')}>
-            API Products
+            คอร์ส
+          </button>
+          <button style={navButtonStyle(page === 'dashboard')} onClick={() => setPage('dashboard')}>
+            แดชบอร์ด
           </button>
           <button style={navButtonStyle(page === 'playground')} onClick={() => setPage('playground')}>
-            Playground
+            API Catalog
           </button>
         </div>
         <button style={loginButtonStyle} onClick={() => setPage('login')}>
@@ -76,6 +80,7 @@ export default function App() {
       <main>
         {page === 'home' && <HomePage />}
         {page === 'products' && <ApiProductsPage />}
+        {page === 'dashboard' && <DashboardPage />}
         {page === 'playground' && <PlaygroundPage />}
         {page === 'login' && <LoginPage />}
       </main>
